@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+
+
+.femmePicture{
+  background-image: url(../../assets/img/collage.jpg);
+}
+
+.flip-card {
+  width: 400px;
+  height: 400px;
+
+  position: relative;
+
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:30px;
+  margin-bottom:30px;
+
+  background-color: white;
+
+
+  /* padding: 15px 25px; */
+  border-radius: 15px;
+
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card-inner {
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  box-shadow: 3px 6px rgba(0,0,0,0.2);
+
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  /* font-size: 100px; */
+  /* font-weight: 900; */
+  text-align: center;
+  font-size: 80px;
+  text-align: center;
+  font-family: 'Bowlby One SC', cursive;
+  color: rgb(255, 0, 119);
+  margin-top:10px;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Bowlby One SC', cursive;
+  color: rgb(255, 0, 119);
+  margin-top:27px;
+}
+
+.image{
+  max-width: 100%;
+  height:200px;
+  margin-top:50px;
+}

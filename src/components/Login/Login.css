@@ -1,0 +1,31 @@
+
+.gifBackground{
+  background-repeat: no-repeat;
+  width:700px;
+  margin-top:50px;
+  margin-bottom:50px;
+  min-height:650px;
+  border-radius: 135px;
+
+}
+
+.background{
+  background-image: url(../../assets/img/App/BWPrint.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+
+}
+
+.app{
+  max-width: 400px;
+  border-radius: 5px;
+  border-width: 5px;
+  border-style:solid;
+  border-color:black;
+}
+
+.card-body{
+  background-color: white;
+}
