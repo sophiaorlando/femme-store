@@ -4,7 +4,7 @@ import ItemCardContainer from "../ItemCardContainer/ItemCardContainer"
 import ItemCardContainer2 from "../ItemCardContainer2/ItemCardContainer2"
 import './Dashboard.css'
 import collage from '../../assets/img/collage.jpg'
-import FlipCard from "../FlipCard/FlipCard"
+import FlipCard2 from "../FlipCard/FlipCard2"
 import {useStateValue} from '../../StateProvider'
 import { Link } from "react-router-dom"
 
@@ -31,15 +31,12 @@ function Dashboard(props) {
         brand={brand}
       />
       <div className="dashboard">
-        <FlipCard
+        <FlipCard2
           setCategory={category}
           setProductType={productType}
           setCardProduct={setCardProduct}
 
         />
-
-        <img className="dashboard_image" src={collage} alt="" ></img>
-
 
         <ItemCardContainer
           makeup={makeup}

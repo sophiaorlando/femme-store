@@ -1,25 +1,33 @@
 import React from 'react'
 import Header from '../Header/Header'
+import SideBar from '../SideBar/SideBar'
+import Tags from '../Filters/Filters'
 import ItemCardContainer2 from '../ItemCardContainer2/ItemCardContainer2'
+import { Form, Nav } from "react-bootstrap"
+
 import './ProductsPage.css'
 
 function ProductsPage() {
 
 
+
   return (
 
     <div >
-          <Header/>
-      <h1>This is the products Products Page</h1>
+      <Header />
       <div>
-            <h2 className="checkout_title">Your Shopping Basket</h2>
-            <div className="productsPage">
-            
-              <ItemCardContainer2
-              />
-              </div>
-          </div>
+        {/* <div className="productsPage"> */}
 
+          <h1>Products </h1>
+
+        {/* </div> */}
+
+          {/* <SideBar/> */}
+          <SideBar width={300} height={"100vh"}>
+            <Tags />
+          </SideBar>
+          <ItemCardContainer2/>
+      </div>
     </div>
   )
 }

@@ -2,6 +2,9 @@ import React, { useRef, useState } from 'react'
 import { Container, Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import Collage from '../../assets/img/collage.jpg'
+import './UpdateProfile.css'
+
 
 function UpdateProfile() {
   const emailRef = useRef()
@@ -43,9 +46,11 @@ function UpdateProfile() {
 
   return (
     <>
+    <div className="background">
       <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+      <div className=" gifBackground" style= {{backgroundImage: `url(${Collage})`}}>
 
-        <div className="w-100" style={{ maxWidth: "400px" }}>
+        <div className="app w-100" style={{ maxWidth: "400px" }}>
           <Card>
             <Card.Body>
               <h2 className="text-center mb-4">Update Profile</h2>
@@ -65,14 +70,17 @@ function UpdateProfile() {
                 </Form.Group>
                 <Button disabled={loading} className="w-100" type="submit">Update</Button>
               </Form>
-            </Card.Body>
-          </Card>
-          <div className="w-100 text-center mt-2">
+              <div className="w-100 text-center mt-2">
             <Link to="/">Cancel</Link>
             {/* Login */}
           </div>
+            </Card.Body>
+          </Card>
+
+        </div>
         </div>
       </Container>
+      </div>
     </>
   )
 }

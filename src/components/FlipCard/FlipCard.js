@@ -34,8 +34,6 @@ function FlipCard(props) {
     fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${productType}&product_category=${category}`)
       .then(response => response.json())
       .then((data) => {
-        // setCategory("")
-        // setProductType("")
 
         addSearchResults(data)
 
@@ -56,15 +54,24 @@ function FlipCard(props) {
                 <img src="https://makeup-api.herokuapp.com/assets/blush-ff7992c3d7690d18a9b0224177cfbdedbc036497cf87c393ec01c6a2ef070258.svg" className="image"></img>
               </div>
               <div className="flip-card-back">
-                <Button
-                  onClick={MakeupClick}
-                  value="Blush,Powder"
-                >Powder</Button>
-                <Button
-                  onClick={MakeupClick}
-                  value="Blush,Cream"
-                >Cream
+                <div className="row">
+                  <div className="col">
+                    <Button
+                      onClick={MakeupClick}
+                      value="Blush,Powder"
+                    >Powder
                 </Button>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <Button
+                      onClick={MakeupClick}
+                      value="Blush,Cream"
+                    >Cream
+                </Button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -83,8 +90,8 @@ function FlipCard(props) {
                 <Button
                   onClick={MakeupClick}
                   value="Bronzer,Powder"
-                >Powder</Button>              
-                </div>
+                >Powder</Button>
+              </div>
             </div>
           </div>
         </div>
@@ -99,11 +106,11 @@ function FlipCard(props) {
                 <img src="https://makeup-api.herokuapp.com/assets/eyebrow-fc49d8d480ace717203a21fe863c2231970063add91ed2f15181fe8e2d3b96b9.svg" className="image"></img>
               </div>
               <div className="flip-card-back">
-              <Button
+                <Button
                   onClick={MakeupClick}
                   value="Eyebrow,Pencil"
-                >Pencil</Button>              
-                </div>
+                >Pencil</Button>
+              </div>
             </div>
           </div>
         </div>
@@ -118,23 +125,28 @@ function FlipCard(props) {
                 <img src="https://makeup-api.herokuapp.com/assets/eyeliner-de329b6d65d721a45190051af1153e23202df9eb1c393d1ac65972376ee42d50.svg" className="image"></img>
               </div>
               <div className="flip-card-back">
-              <Button
-                  onClick={MakeupClick}
-                  value="Eyeliner,Liquid"
-                >Liquid</Button>                
-              <Button
+                <div className="row">
+                  <div className="col">
+                    <Button
+                      onClick={MakeupClick}
+                      value="Eyeliner,Liquid"
+                    >Liquid
+                </Button>
+                  </div>
+                </div>
+                <Button
                   onClick={MakeupClick}
                   value="Eyeliner,Pencil"
-                >Pencil</Button>                   
-              <Button
+                >Pencil</Button>
+                <Button
                   onClick={MakeupClick}
                   value="Eyeliner,Gel"
-                >Gel</Button>                   
-              <Button
+                >Gel</Button>
+                <Button
                   onClick={MakeupClick}
                   value="Eyeliner,Cream"
-                >Cream</Button>                 
-                </div>
+                >Cream</Button>
+              </div>
             </div>
 
           </div>

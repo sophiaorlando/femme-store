@@ -8,3 +8,11 @@
   z-index:-1;
   margin-bottom:-150px;
 }
+
+ul{
+  list-style-type: none;
+}
+.rowC{
+  display:flex; 
+  flex-direction:row;
+}

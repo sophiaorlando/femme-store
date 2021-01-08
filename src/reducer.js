@@ -3,7 +3,8 @@ import { StateProvider } from "./StateProvider";
 export const initialState = {
   basket: [],
   user: null,
-  searchResults: []
+  searchResults: [],
+  filteredResults: []
 };
 
 export const getBasketTotal = (basket) => 
@@ -40,8 +41,15 @@ const reducer = (state, action) => {
           searchResults: action.item
         }
         break;
+        case "ADD_FILTERED_RESULTS":
+          return{
+            ...state,
+            filteredResults: action.item
+          }
+          break;
             default:
               return state;
+              
 
   }
 }

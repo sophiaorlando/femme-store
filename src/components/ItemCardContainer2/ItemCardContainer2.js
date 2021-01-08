@@ -6,34 +6,31 @@ import Card from '../Card/Card'
 
 function ItemCardContainer() {
   const [{ searchResults }] = useStateValue()
+  const [{ filteredResults }] = useStateValue()
 
 
-  // const [results, setResults] = useState([])
-
-  useEffect(() => {
-
-    // if (props.cardProduct) {
-    //   setResults(props.cardProduct)
-    // }
-
-  })
-  // console.log(props.item.makeup)
 
   return (
     <Container>
       <Row>
+        {
 
-        {searchResults?.map(item => (
-          <Card 
-          // id={item.id}
-          // brand={item.brand}
-          // image={item.image}
-          // price={item.price}
-          // rating={item.rating}
-          item={item}
-          />
-          ))}
+          filteredResults ?
 
+            filteredResults?.map(item => (
+              <Card
+                item={item}
+                key={item.key}
+              />
+            ))
+
+            : searchResults?.map(item => (
+              <Card
+                item={item}
+                key={item.key}
+              />
+            ))
+        }
       </Row>
     </Container>
   )

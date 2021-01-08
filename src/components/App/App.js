@@ -11,6 +11,8 @@ import { AuthProvider } from '../contexts/AuthContext'
 import Dashboard from '../Dashboard/Dashboard'
 import UpdateProfile from '../UpdateProfile/UpdateProfile'
 import ProductsPage from '../ProductsPage/ProductsPage'
+import SingleProductPage from '../SingleProductPage/SingleProductPage'
+
 
 const globalState = {
   cardProduct: []
@@ -41,6 +43,7 @@ function App() {
             <Route path="/forgot-password" component={ForgotPassword} />
             <PrivateRoute exact path="/" component={Dashboard} />
             <PrivateRoute path="/products-page" component={ProductsPage} />
+            <PrivateRoute path="/singleProduct-page" component={SingleProductPage} />
             <PrivateRoute path="/update-profile" component={UpdateProfile} />
 
           </Switch>

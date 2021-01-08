@@ -21,8 +21,17 @@ function Header(props) {
   // const [brand, setBrand] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
   const { currentUser, logout } = useAuth()
+
+  const [{ searchResults }, dispatch] = useStateValue()
+
   const history = useHistory()
 
+  const addSearchResults = (data) => {
+    dispatch({
+      type: 'ADD_SEARCH_RESULTS',
+      item: data
+    })
+  }
 
   function HandleClick(e) {
     e.preventDefault()
@@ -31,8 +40,12 @@ function Header(props) {
       .then((data) => {
         setBrand("")
         // console.log(data)
-        setMakeup(data)
+        addSearchResults(data)
+
+        // setMakeup(data)
       })
+    history.push('/products-page')
+
   }
 
 
@@ -51,6 +64,20 @@ function Header(props) {
 
   return (
     <div>
+
+      <style type="text/css">
+    {`
+    .btn-flat {
+      background-color: rgb(255, 0, 119);
+      color: black;
+    }
+    .searchTxt{
+      color: black;
+      font-weight:bold;
+    }
+    `}
+  </style>
+
       <nav className="header">
         {/* logo */}
         <Link to="/">
@@ -69,8 +96,8 @@ function Header(props) {
           />
           <InputGroup.Append>
               <Button
-                onClick={HandleClick}>
-                  Search
+                onClick={HandleClick} variant="flat">
+                  <span className="searchTxt">Search</span>
               </Button>
           </InputGroup.Append>
 
