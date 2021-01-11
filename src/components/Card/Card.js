@@ -1,6 +1,6 @@
-import React from 'react'
-import { Card, Button, Col } from 'react-bootstrap'
+import { Card, Button, Col, Overlay, Tooltip } from 'react-bootstrap'
 import { useStateValue } from '../../StateProvider'
+import React, { useState, useRef } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Card.css'
 
@@ -9,22 +9,16 @@ import './Card.css'
 
 function ProductCard(props) {
   const [{ basket }, dispatch] = useStateValue()
-  
+  const [show, setShow] = useState(false);
+  const target = useRef(null);
 
   const history = useHistory()
 
 
   const imgClick = () => {
-    history.push('/singleProduct-page')
-
+    window.open(props.item.product_link)
   }
 
-  // if (props.item.product_colors) {
-  //   console.log(props.item.product_colors[0].colour_name)
-  // } else if (props.item.product_colors[0] === []) {
-  //   console.log("no results")
-
-  // }
 
   const addToBasket = () => {
     //Add item to basket..
@@ -35,11 +29,12 @@ function ProductCard(props) {
         brand: props.item.brand,
         name: props.item.name,
         price: props.item.price,
-        color: props.item.product_colors
+        color: props.item.product_colors,
+        productLink: props.item.product_link
 
       }
     })
-
+    setShow(!show)
   }
   return (
 
@@ -57,28 +52,59 @@ function ProductCard(props) {
     }
     .basketTxt{
       color: black;
-      font-weight:bold;
+      font-family: 'Bowlby One SC', cursive;
+
     }
+    .card_Bowlby{
+      font-family: 'Bowlby One SC', cursive;
+    }
+    .card_Ubuntu{
+      font-family: 'Ubuntu', sans-serif;
+
+    }
+    .card_styling{
+      border-radius:15px;
+      
+    }
+    .image_styling{
+      border-radius:15px;
+      border-style:solid;
+      border-width:1px;
+      border-color: rgb(255, 0, 119)
+    }
+
+
     `}
       </style>
 
       <Col sm="4" >
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }} className="card_styling">
           <Button onClick={imgClick} variant="image">
-            <Card.Img variant="top" src={props.item.api_featured_image} />
-
+            <Card.Img
+              variant="top"
+              className="image_styling"
+              src={props.item.api_featured_image}
+            />
+            <div className="middle">
+              <div className="text">
+                Go to Product
+              </div>
+            </div>
           </Button>
           <Card.Body className="text-center">
-            <Card.Title><h3>{props.item.brand}</h3></Card.Title>
-            <div>
+            <Card.Title><h3 className="card_Bowlby">{props.item.brand}</h3></Card.Title>
+            <div className="card_Ubuntu">
               <h5>{props.item.name}</h5>
               <h5>${props.item.price}</h5>
-              {/* <h5>${props.item.product_colors[0]}</h5> */}
-
-
-
             </div>
-            <Button variant="flat" onClick={addToBasket}><span className="basketTxt">Add to basket</span></Button>
+            <Button variant="flat" ref={target} onClick={addToBasket}><span className="basketTxt">Add to basket</span></Button>
+            <Overlay target={target.current} show={show} placement="right">
+              {(props) => (
+                <Tooltip id="overlay-example" {...props}>
+                  Added to Basket
+                </Tooltip>
+              )}
+            </Overlay>
           </Card.Body>
         </Card>
       </Col>

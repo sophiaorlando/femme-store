@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import "./Header.css"
 import { Alert, Button, InputGroup, FormControl } from "react-bootstrap"
 import { useAuth } from '../contexts/AuthContext'
@@ -17,9 +17,6 @@ function Header(props) {
   const [error, setError] = useState("")
   let setBrand = props.setBrand
   let brand = props.brand
-  let setMakeup = props.setMakeup
-  // const [brand, setBrand] = useState("");
-  const [isLoaded, setIsLoaded] = useState(false);
   const { currentUser, logout } = useAuth()
 
   const [{ searchResults }, dispatch] = useStateValue()

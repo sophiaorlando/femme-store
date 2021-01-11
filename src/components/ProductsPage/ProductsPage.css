@@ -16,3 +16,12 @@ ul{
   display:flex; 
   flex-direction:row;
 }
+
+.product_header{
+  background-image: url(../../assets/img/App/BWPrint.jpg);
+  object-fit: contain;
+  padding:40px;
+  background-size: cover;
+  background-position:center ;
+
+}

@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from '../Header/Header'
 import Checkout from "../Checkout/Checkout"

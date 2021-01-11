@@ -1,12 +1,12 @@
-import React from 'react'
-import { Form, Nav } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 import { useStateValue } from "../../StateProvider"
+import React from 'react'
+
 import './Filters.css'
 
 function Tags() {
 
   const [{ searchResults }, dispatch] = useStateValue()
-
 
   const addFilteredResults = (data) => {
     dispatch({
@@ -24,7 +24,7 @@ function Tags() {
     let tag = event.target.nextElementSibling.innerText
     let tagIndex = selectedTags.indexOf(tag)
 
-    if (isChecked){
+    if (isChecked) {
       selectedTags.push(tag)
       console.log("added", selectedTags)
     } else {
@@ -62,34 +62,133 @@ function Tags() {
         "Non-GMO",
         "No Talc"
       ]
-      // code block
       break;
     case "bronzer":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Gluten Free",
+        "Canadian",
+        "Natural",
+        "Organic",
+        "purpicks",
+        "EWG verified",
+      ]
       break;
     case "eyebrow":
-      // code block
+      tagArr = [
+        "purpicks",
+        "EWG verified",
+      ]
       break;
     case "eyeliner":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Natural",
+        "Canadian",
+        "Gluten Free",
+        "Organic",
+        "purpicks",
+        "CertClean",
+        "EWG verified",
+        "Hypoallergenic",
+        "No Talc",
+        "EcoCert"
+      ]
       break;
     case "eyeshadow":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Canadian",
+        "Natural",
+        "Gluten Free",
+        "Non-GMO",
+        "purpicks",
+        "CertClean",
+        "EWG verified",
+        "Organic",
+        "USDA Organic",
+        "Hypoallergenic",
+        "No Talc",
+        "EcoCert"
+      ]
       break;
     case "foundation":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Canadian",
+        "Natural",
+        "Gluten Free",
+        "purpicks",
+        "CertClean",
+        "EWG verified",
+        "Hypoallergenic",
+        "No Talc",
+        "water free",
+        "cruely free",
+        "alcohol free",
+        "oil free",
+        "silicone free"
+      ]
       break;
     case "lip_liner":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Canadian",
+        "Natural",
+        "Gluten Free",
+        "purpicks",
+        "EWG verified",
+        "Hypoallergenic",
+        "No Talc",
+        "cruely free",
+      ]
       break;
     case "lipstick":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Canadian",
+        "Natural",
+        "Gluten Free",
+        "Non-GMO",
+        "Peanut Free Product",
+        "cruely free",
+        "Organic",
+        "purpicks",
+        "CertClean",
+        "EWG verified",
+        "Hypoallergenic",
+        "Chemical Free",
+        "No Talc",
+
+      ]
       break;
     case "mascara":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Canadian",
+        "Natural",
+        "Gluten Free",
+        "Organic",
+        "purpicks",
+        "EWG verified",
+        "Hypoallergenic",
+        "No Talc",
+        "EcoCert",
+        "USDA Organic",
+        "CertClean",
+      ]
       break;
     case "nail_polish":
-      // code block
+      tagArr = [
+        "Vegan",
+        "Canadian",
+        "Natural",
+        "Gluten Free",
+        "Fair Trade",
+        "Sugar Free",
+        "Dairy Free",
+        "Non-GMO",
+      ]
       break;
     default:
     // code block
@@ -105,6 +204,7 @@ function Tags() {
         key={index}
         label={tag}
         onChange={handleChange}
+        className="filter_type"
       >
       </Form.Check>
     )
@@ -114,21 +214,22 @@ function Tags() {
 
   return (
     <div>
-      <h1>Filters</h1>
 
       <div className="filters">
+        <h1 className="filters_header">Filters</h1>
 
+        <style type="text/css">
+
+          {`
+.filter_type{
+  color:rgb(255, 0, 119);
+  padding:3px;
+}
+`}
+        </style>
         <ul>
           {filtersArr}
         </ul>
-        {/* <h2>Blush certifications</h2>
-        <ul>
-          {blushCertificationsList}
-        </ul>
-        <h2>Blush Miscellaneous</h2>
-        <ul>
-          {blushMiscellaneousList}
-        </ul> */}
 
       </div>
     </div>

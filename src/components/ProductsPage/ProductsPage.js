@@ -3,7 +3,6 @@ import Header from '../Header/Header'
 import SideBar from '../SideBar/SideBar'
 import Tags from '../Filters/Filters'
 import ItemCardContainer2 from '../ItemCardContainer2/ItemCardContainer2'
-import { Form, Nav } from "react-bootstrap"
 
 import './ProductsPage.css'
 
@@ -18,7 +17,7 @@ function ProductsPage() {
       <div>
         {/* <div className="productsPage"> */}
 
-          <h1>Products </h1>
+          <h1 className="product_header">Products </h1>
 
         {/* </div> */}
 
