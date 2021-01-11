@@ -31,7 +31,7 @@ function FlipCard(props) {
     let category = makeupArr[1]
 
 
-    fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=${productType}&product_category=${category}`)
+    fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${productType}&product_category=${category}`)
       .then(response => response.json())
       .then((data) => {
 

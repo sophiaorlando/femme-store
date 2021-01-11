@@ -32,7 +32,7 @@ function Header(props) {
 
   function HandleClick(e) {
     e.preventDefault()
-    fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`)
+    fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=${brand}`)
       .then(response => response.json())
       .then((data) => {
         setBrand("")
