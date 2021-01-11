@@ -5,7 +5,9 @@ import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from "react-router-dom"
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket"
 import { useStateValue } from '../../StateProvider'
+import HomeImg from '../../assets/img/App/HomeImg.png'
 import BWPrint from '../../assets/img/App/BWPrint.jpg'
+
 
 
 
@@ -22,6 +24,10 @@ function Header(props) {
   const [{ searchResults }, dispatch] = useStateValue()
 
   const history = useHistory()
+
+
+
+
 
   const addSearchResults = (data) => {
     dispatch({
@@ -63,7 +69,7 @@ function Header(props) {
     <div>
 
       <style type="text/css">
-    {`
+        {`
     .btn-flat {
       background-color: rgb(255, 0, 119);
       color: black;
@@ -73,32 +79,15 @@ function Header(props) {
       font-weight:bold;
     }
     `}
-  </style>
+      </style>
 
       <nav className="header">
         {/* logo */}
         <Link to="/">
-          <img className="header_logo" src={BWPrint} alt=""></img>
+          <img className="header_logo" src={HomeImg} alt=""></img>
         </Link>
 
-        {/* Seach Bar */}
-        <InputGroup className="mb-3">
-        <FormControl
-            placeholder="Brand Name"
-            aria-label="Brand Name"
-            aria-describedby="basic-addon1"
-            onChange={(e) => setBrand(e.target.value)}
-            value={brand}
-
-          />
-          <InputGroup.Append>
-              <Button
-                onClick={HandleClick} variant="flat">
-                  <span className="searchTxt">Search</span>
-              </Button>
-          </InputGroup.Append>
-
-        </InputGroup>
+        <h1 className="mb-3 header_phrase">Hey hot stuff, have fun exploring! </h1>
 
         {/* Links */}
         <div className="header_nav">
@@ -123,7 +112,7 @@ function Header(props) {
           <Link to="/" className="header_link">
             <div className="header_option">
               <span className="header_optionLineOne">Returns </span>
-              <span className="header_optionLineTwo">& Orders</span>
+              <span className="header_optionLineTwo">&amp; Orders</span>
             </div>
           </Link>
 

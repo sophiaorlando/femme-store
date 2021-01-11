@@ -19,7 +19,6 @@ function Subtotal() {
     border-width:0px;
     margin-top:10px;
     font-family: 'Bowlby One SC', cursive;
-
   }
   `}
 </style>
@@ -30,7 +29,7 @@ function Subtotal() {
       <p> Subtotal ({basket.length} items): <strong>{`${value}`}</strong>
         </p>
         <small className="subtotal_gift">
-          <input type="checkbox" /> This order contains a gift
+          <input type="checkbox" /> <span className="value">This order contains a gift</span>
         </small>
       <Button className="proceed_checkout">Proceed to Checkout</Button>
 

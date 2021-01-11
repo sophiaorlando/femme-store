@@ -1,7 +1,7 @@
 .checkoutProduct{
   display:flex;
-  margin-top:20px;
-  margin-bottom:20px;
+  /* margin-top:20px; */
+  /* margin-bottom:20px; */
 }
 .checkoutProduct_image{
   object-fit:contain;
@@ -24,4 +24,20 @@
 
 .checkoutProduct_rating{
   display: flex;
+}
+
+.subheading{
+  font-size: 20px;
+text-align:center;
+}
+
+.text-muted{
+text-align:center;
+
+}
+
+h5{
+font-weight:bold;
+font-size:30px;
+text-align:center;
 }

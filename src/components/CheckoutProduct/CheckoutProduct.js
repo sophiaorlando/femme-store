@@ -1,24 +1,24 @@
 import React from 'react'
 import "./CheckoutProduct.css"
-import { Card, Button, Col } from 'react-bootstrap'
-import {useStateValue} from "../../StateProvider"
+import { Card, Button, Col, Row, Image } from 'react-bootstrap'
+import { useStateValue } from "../../StateProvider"
 
-function CheckoutProduct({id, brand, image, price, rating, name}) {
-  const [{basket}, dispatch] = useStateValue()
+function CheckoutProduct({ id, brand, image, price, rating, name }) {
+  const [{ basket }, dispatch] = useStateValue()
 
-const removeFromBasket = () => {
+  const removeFromBasket = () => {
 
-  dispatch({
-    type: "REMOVE_FROM_BASKET",
-    id: id
-  })
-}
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id: id
+    })
+  }
 
   return (
     <div className="checkoutProduct">
 
-<style type="text/css">
-{`
+      <style type="text/css">
+        {`
     .basketTxt{
       color: black;
       font-family: 'Bowlby One SC', cursive;
@@ -37,34 +37,29 @@ const removeFromBasket = () => {
     }
     .card_Bowlby{
       font-family: 'Bowlby One SC', cursive;
+      margin-top: 5%;
     }
     .card_Ubuntu{
       font-family: 'Ubuntu', sans-serif;
     }
 `}
-</style>
-      <Col sm="4" >
-        <Card style={{ width: '18rem' }} className="card_styling">
-            <Card.Img 
-            variant="top" 
-            className="image_styling"
-            src={image} />
-          <Card.Body className="text-center">
-            <Card.Title><h3 className="card_Bowlby">{brand}</h3></Card.Title>
-            <div className="card_Ubuntu">
-              <h5 >{name}</h5>
-              <h5>${price}</h5>
-              {/* <h5>${props.item.product_colors[0]}</h5> */}
+      </style>
+<div style={{marginTop: "10%"}}>
+      <Row style={{ marginTop: "1%", backgroundColor: "white", marginLeft: "5%", marginBottom: "1%" }}>
+        <Col className="col-md-6">
+          <h5 className="card_Bowlby">{brand}</h5>
+          <h5 className="subheading card_Ubuntu">{name}</h5>
+          <p className="text-muted card_Ubuntu">${price}</p>
+          <Button variant="flat" style={{marginTop: "5%", marginBottom: "1%"}} onClick={removeFromBasket}><span className="basketTxt">Remove from basket</span></Button>
 
+        </Col>
+        <Col className="col-md-6">
+          <Image src={image} className="img-fluid" style={{ width: "180px", height: "180px", textAlign: "center", padding: "5%", objectFit: "contain" }}></Image>
+        </Col>
 
+      </Row>
 
-            </div>
-            <Button variant="flat" onClick={removeFromBasket}><span className="basketTxt">Remove from basket</span></Button>
-          </Card.Body>
-        </Card>
-      </Col>
-
-
+      </div>
     </div>
   )
 }

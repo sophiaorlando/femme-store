@@ -1,6 +1,6 @@
 .checkout{
   /* display:flex; */
-  padding:20px;
+  /* padding:20px; */
   height:max-content;
 }
 
@@ -14,18 +14,39 @@
 }
 
 .checkout_title{
-  background-image: url(../../assets/img/App/BWPrint.jpg);
-  object-fit: contain;
-  padding:40px;
-  background-size: cover;
-  background-position:center ;
-  color:rgb(255, 0, 119);
-  font-family: 'Bowlby One SC', cursive;
-  text-align: center;
+
+color:rgb(255, 0, 119);
+font-family: 'Bowlby One SC', cursive;
+text-align: center;
+
+background-image: url(../../assets/img/App/BWPrint.jpg);
+object-fit: contain;
+padding:40px;
+background-size: cover;
+background-position:center ;
+
 
 }
 
 .background_card{
 background-image: url(../../assets/img/collage.jpg);
+border-style: solid;
+border-color: white;
+border-radius: 15px;
+/* margin-top:50px;
+margin-right:150px;
+margin-left:150px; */
+}
+
+.main_background{
+  background-color: white;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  margin-right: 100px;
+  margin-left: 100px;
+  border-style: solid;
+  border-color:rgb(255, 0, 119);
+  border-radius: 15px;
+
 }
 

@@ -17,6 +17,15 @@
   border-radius:15px;
 
 }
+.practiceImg{
+  width: 1000px;
+
+}
+
+.header_phrase{
+  color:black;
+
+}
 
 .header_search{
   display:flex;
@@ -33,6 +42,9 @@
 .header_nav{
   display:flex;
   justify-content: space-evenly;
+  float:right;
+  /* position:absolute; */
+  /* margin-left:700px; */
 }
 
 .header_option{
